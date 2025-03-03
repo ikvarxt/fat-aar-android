@@ -182,7 +182,7 @@ class VariantProcessor {
     }
 
     private void processRClasses(RClassesTransform transform, TaskProvider<Task> bundleTask) {
-        if (FatUtils.compareVersion(VersionAdapter.AGPVersion, "8.0.0") >= 0) return
+        if (FatUtils.compareVersion(VersionAdapter.AGPVersion, "7.4.2") >= 0) return
         TaskProvider reBundleTask = configureReBundleAarTask(bundleTask)
         TaskProvider transformTask = mProject.tasks.named("transformClassesWith${transform.name.capitalize()}For${mVariant.name.capitalize()}")
         transformTask.configure {
