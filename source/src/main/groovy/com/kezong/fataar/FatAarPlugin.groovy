@@ -64,7 +64,7 @@ class FatAarPlugin implements Plugin<Project> {
 
     private registerTransform() {
         variantPackagesProperty = project.objects.mapProperty(String.class, List.class)
-        if (FatUtils.compareVersion(VersionAdapter.AGPVersion, "8.0.0") >= 0) {
+        if (FatUtils.compareVersion(VersionAdapter.AGPVersion, "7.4.2") >= 0) {
             FatAarPluginHelper.registerAsmTransformation(project, variantPackagesProperty)
         } else {
             transform = new RClassesTransform(project)
